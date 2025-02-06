@@ -63,8 +63,9 @@ export const EditBtn = ({ className, onClick }: { className?: string; onClick: (
       className={cn('px-2 flex space-x-1 items-center rounded-md  cursor-pointer', className)}
       onClick={onClick}
     >
-      <PencilIcon className='w-3 h-3' />
-      <span>{t('common.operation.edit')}</span>
+      阿尔法系统
+      {/* <PencilIcon className='w-3 h-3' /> */}
+      {/* <span>{t('common.operation.edit')}</span> */}
     </div>
   )
 }
