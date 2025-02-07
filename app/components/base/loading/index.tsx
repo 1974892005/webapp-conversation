@@ -23,7 +23,7 @@ const Loading = (
           </clipPath>
         </defs>
       </svg>
-
+      <span className='ml-3 text-gray-500'>阿尔法系统加载中...</span>
     </div>
   )
 }

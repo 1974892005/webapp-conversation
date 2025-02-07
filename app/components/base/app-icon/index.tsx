@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import classNames from 'classnames'
 import style from './style.module.css'
+import Image from 'next/image'
 
 export type AppIconProps = {
   size?: 'xs' | 'tiny' | 'small' | 'medium' | 'large'
@@ -16,21 +17,38 @@ const AppIcon: FC<AppIconProps> = ({
   background,
   className,
 }) => {
+
   return (
-    <span
+    <Image
+      src="/alpha.png"
       className={classNames(
         style.appIcon,
         size !== 'medium' && style[size],
         rounded && style.rounded,
         className ?? '',
       )}
-      style={{
-        background,
-      }}
-    >
-      🤖
-    </span>
+      width={100}
+      height={100}
+      alt="logo"
+    />
   )
+
+
+  // return (
+  //   <span
+  //     className={classNames(
+  //       style.appIcon,
+  //       size !== 'medium' && style[size],
+  //       rounded && style.rounded,
+  //       className ?? '',
+  //     )}
+  //     style={{
+  //       background,
+  //     }}
+  //   >
+  //     🤖
+  //   </span>
+  // )
 }
 
 export default AppIcon

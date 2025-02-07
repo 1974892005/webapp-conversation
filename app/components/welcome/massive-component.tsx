@@ -9,12 +9,19 @@ import {
 import s from './style.module.css'
 import type { AppInfo } from '@/types/app'
 import Button from '@/app/components/base/button'
+import Image from 'next/image'
 
 export const AppInfoComp: FC<{ siteInfo: AppInfo }> = ({ siteInfo }) => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md'>👏 {t('app.common.welcome')} {siteInfo.title}</div>
+      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md'>
+        <Image
+          className='mr-1'
+          alt={siteInfo.title}
+          width={28} height={28}
+          src={'/alpha.png'}></Image> {t('app.common.welcome')} {siteInfo.title}
+      </div>
       <p className='text-sm text-gray-500'>{siteInfo.description}</p>
     </div>
   )
@@ -63,9 +70,8 @@ export const EditBtn = ({ className, onClick }: { className?: string; onClick: (
       className={cn('px-2 flex space-x-1 items-center rounded-md  cursor-pointer', className)}
       onClick={onClick}
     >
-      阿尔法系统
-      {/* <PencilIcon className='w-3 h-3' /> */}
-      {/* <span>{t('common.operation.edit')}</span> */}
+      <PencilIcon className='w-3 h-3' />
+      <span>{t('common.operation.edit')}</span>
     </div>
   )
 }

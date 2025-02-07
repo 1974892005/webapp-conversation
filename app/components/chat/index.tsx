@@ -145,7 +145,7 @@ const Chat: FC<IChatProps> = ({
       </div>
       {
         !isHideSendInput && (
-          <div className={cn(!feedbackDisabled && '!left-3.5 !right-3.5', 'absolute z-10 bottom-0 left-0 right-0')}>
+          <div className={cn(!feedbackDisabled && '!left-3.5 !right-3.5', 'absolute z-10 bottom-4.5 left-0 right-0')}>
             <div className='p-[5.5px] max-h-[150px] bg-white border-[1.5px] border-gray-200 rounded-xl overflow-y-auto'>
               {
                 visionConfig?.enabled && (
@@ -180,6 +180,7 @@ const Chat: FC<IChatProps> = ({
                 onKeyUp={handleKeyUp}
                 onKeyDown={handleKeyDown}
                 autoSize
+                placeholder='和AI对话'
               />
               <div className="absolute bottom-2 right-2 flex items-center h-8">
                 <div className={`${s.count} mr-4 h-5 leading-5 text-sm bg-gray-50 text-gray-500`}>{query.trim().length}</div>
@@ -199,6 +200,7 @@ const Chat: FC<IChatProps> = ({
           </div>
         )
       }
+      <div className="w-full text-center absolute left-0 bottom-[2px] z-20 text-xs leading-3 text-[rgb(163,163,163)]">内容由 AI 生成，请仔细甄别</div>
     </div>
   )
 }
